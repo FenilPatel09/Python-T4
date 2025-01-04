@@ -1,0 +1,25 @@
+class Vehicle:
+    def __init__(self,name,mileage,seat):
+        self.name=name
+        self.mileage=mileage
+        self.seat=seat
+
+    def fare(self):
+        print(self.seat*100)
+class Bus(Vehicle):
+    
+    def __init__(self, name, mileage, seat):
+        super().__init__(name, mileage, seat)
+    
+    def fare(self):
+        base_fare=super().fare()
+        maintanance_charge=base_fare*0.10
+        total=base_fare+maintanance_charge
+        print(total)
+
+bus=Bus("volvo Bus",12,50)
+vehicle=Vehicle("car",15,5)
+bus.fare()
+bus.seat
+vehicle.fare()
+vehicle.seat
