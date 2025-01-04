@@ -1,0 +1,22 @@
+class Father:
+    
+    def __init__(self):
+        print("Father constructor")
+        
+    def showF(self):
+        print("Father method")
+        
+class Mother:
+    
+    def showM(self):
+        print("Mother method ")
+
+class Dauter(Father,Mother):
+    
+    def showD(self):
+        print("Dauter method")
+
+g=Dauter()
+g.showD()
+g.showF()
+g.showM()
