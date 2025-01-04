@@ -1,0 +1,29 @@
+class Staff:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def display(self):
+        return f"Name: {self.name}, Salary: {self.salary}"
+
+class Teaching(Staff):
+    def __init__(self, name, salary, subject):
+        super().__init__(name, salary)
+        self.subject = subject
+
+    def display(self):
+        return f"{super().display()}, Subject: {self.subject}"
+
+class NonTeaching(Staff):
+    def __init__(self, name, salary, department):
+        super().__init__(name, salary)
+        self.department = department
+
+    def display(self):
+        return f"{super().display()}, Department: {self.department}"
+
+teacher = Teaching("John Doe", 50000, "Mathematics")
+non_teacher = NonTeaching("Jane Smith", 40000, "Admin")
+
+print(teacher.display())
+print(non_teacher.display())
