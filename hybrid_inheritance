@@ -1,0 +1,25 @@
+class Father:
+    money=1000
+        
+    def show(self):
+        print("parent class method")
+        
+    @staticmethod
+    def stat():
+        a=10
+        print("parent static method ",a)
+
+class Son(Father):
+    
+    def disp(self):
+        print("child class method")
+        
+    def __str__(self):
+        return "son object"
+    
+s=Son()
+s.disp()
+s.show()
+s.stat()
+print(s.money)
+print(s)
