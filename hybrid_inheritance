@@ -23,3 +23,28 @@ s.show()
 s.stat()
 print(s.money)
 print(s)
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+class X:
+    pass
+
+class Y:
+    pass
+
+class Z:
+    pass
+
+class A(X,Y):
+    pass
+
+class B(Y,Z): #only one time visit
+    pass
+
+class M(A,B,Z): 
+    pass
+
+print(M.mro())
