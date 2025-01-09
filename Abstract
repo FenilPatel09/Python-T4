@@ -1,0 +1,47 @@
+from abc import ABC,abstractmethod
+# class Father(ABC):
+#     @abstractmethod
+#     def disp(self):
+#         pass
+#     def show(self):
+#         print("concrete method")
+        
+# class Child(Father):
+#     def disp(self):
+#         print("child class abstract method")
+
+# class Gc(Child):
+#     def display(self):
+#         print("Garnad child method")
+# # c=Child()
+# # c.disp()
+# # c.show()
+# # m=Father()
+# g=Gc()
+# g.disp()
+# g.show()
+# g.display()
+
+
+
+
+
+class Lju(ABC):
+    def concrate(self,a):
+        print("that value is : "+a)
+    
+    @abstractmethod
+    def course(self):
+        print("this is educlass")
+class Learn(Lju):
+    def course(self):
+        print("this is test class")
+class Demo(Lju):
+    def course(self):
+        print("this is Demo class")
+t1=Learn()
+t1.course()
+t1.concrate(500)
+t2=Demo()
+t2.course()
+t2.concrate(800)
