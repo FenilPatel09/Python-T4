@@ -1,0 +1,37 @@
+# Matrix add and maltiply
+class Matrix:
+    def __init__(self,row,col):
+        self.row=row;
+        self.col=col;
+        self.mat=[[0 for i in range(col)]for i in range(row)]
+    def set_element(self):
+        for i in range(self.row):
+            for j in range(self.col):
+                self.mat[i][j]=int(input("Enter element on {i}th row and {j}th col : "))
+    def __add__(self,other):
+        if self.row==other.row and self.col==other.col:
+            result=Matrix(self.row,self.col)
+            for i in range(self.row):
+                for j in range(self.col):
+                    result.mat[i][j]=self.mat[i][j]+other.mat[i][j]
+            return result.mat
+        else:
+            return "Matrix dont added"
+    def __mul__(self,other):
+        if self.col==other.row:
+            result=Matrix(self.row,other.col)
+            for i in range(self.row):
+                for j in range(other.col):
+                    r=0
+                    for k in range(self.col):
+                        r+=self.mat[i][k]*other.mat[k][j]
+                    result.mat[i][j]=r
+            return result.mat
+        else:
+            return "matrix not mulply"
+m1=Matrix(2,3)
+m2=Matrix(3,2)
+m1.set_element()
+m2.set_element()
+print(m1+m2)
+print(m1*m2)
